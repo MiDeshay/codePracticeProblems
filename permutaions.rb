@@ -1,3 +1,5 @@
+#think of dealing cards
+
 def permute(nums)
     return [[nums.first]] if nums.length == 1
     return [nums, nums.reverse] if nums.length == 2
@@ -7,20 +9,17 @@ def permute(nums)
     
     perms = permute(rest)
     
-    
     arr = []
   
     perms.each do |perm|
-       (0..perms.length).each do |i|
+       (0..perm.length).each do |i|
          left = perm.slice(0,i)
          right = perm.slice(i, perm.length)
            
          result = nil
-         if right
-            result = left + [firstEl] + right 
-         else
-              result = left + [firstEl]
-         end
+      
+        result = left + [firstEl] + right 
+         
           
            
          arr << result
@@ -29,6 +28,10 @@ def permute(nums)
     
     arr
 end
+
+p permute([5,4,6,2])
+
+
 
 #if array length is one, return first el in an array
 
