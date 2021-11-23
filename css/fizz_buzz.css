@@ -1,0 +1,28 @@
+body{
+    font-size: 25px;
+}
+
+ul {
+    list-style: none;
+    counter-reset: num;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+ul li{
+    counter-increment: num;
+}
+
+ul li:not(:nth-child(3n)):after {
+    content: counter(num);
+}
+
+li:nth-child(3n):before {
+    content: 'fizz';
+    color: green;
+}
+
+li:nth-child(5n):after {
+    content: 'buzz';
+    color: blue;
+}
